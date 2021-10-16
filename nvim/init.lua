@@ -1,0 +1,7 @@
+require('options')
+require('keymappings')
+require('plugins')
+require('nv-compe')
+require('lsp.lua-ls')
+require('lsp.py-ls')
+require('lsp.ts-ls')

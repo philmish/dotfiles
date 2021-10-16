@@ -1,0 +1,3 @@
+[submodule "nvim/ls/lua-language-server"]
+	path = nvim/ls/lua-language-server
+	url = https://github.com/sumneko/lua-language-server
