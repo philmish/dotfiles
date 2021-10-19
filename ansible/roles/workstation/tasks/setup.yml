@@ -13,13 +13,6 @@
     - '{{ ubuntu_packages }}'
   when: ansible_distribution == "Ubuntu"
 
-- name: Clone Dotfiles
-  tags: setup, dotfiles
-  git:
-    repo: https://github.com/philmish/dotfiles
-    dest: '~/'
-    clone: yes
-
 - name: set nvim config
   tags: setup, neovim
   copy:
