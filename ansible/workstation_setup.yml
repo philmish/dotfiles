@@ -1,0 +1,11 @@
+- hosts: localhost
+  become: yes
+  tasks:
+    - include_role:
+        name: workstation
+        tasks_from: setup
+    - include_role:
+        name: workstation
+        tasks_from: neovim_setup
+
+

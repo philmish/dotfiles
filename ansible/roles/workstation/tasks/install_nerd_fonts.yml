@@ -1,0 +1,11 @@
+- name: Clone nerd-fonts
+  tags: setup, neovim, fonts
+  git:
+    repo: https://github.com/ryanoasis/nerd-fonts
+    clone: yes
+    depth: 1
+    dest: '~/'
+
+- name: install fonts
+  tags: setup, neovim, fonts
+  shell: bash ~/nerd-fonts/install.sh
