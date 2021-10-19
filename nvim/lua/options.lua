@@ -23,3 +23,4 @@ vim.o.showmode=false
 vim.o.cmdheight=2
 vim.o.laststatus=2
 vim.o.modifiable=true
+vim.o.splitright=true
