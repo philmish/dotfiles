@@ -1,3 +1,10 @@
+default_dirs:
+  - ~/repos/github.com
+  - ~/repos/gitlab.com
+  - ~/repos/home_server
+  - ~/repos/privat
+  - ~/.newsboat
+
 neovim_ppa: ppa:neovim-ppa/unstable
 ubuntu_packages:
   - build-essential
