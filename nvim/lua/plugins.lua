@@ -11,11 +11,17 @@ end
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  -- Colorschemes
   use 'joshdick/onedark.vim'
   use 'bluz71/vim-moonfly-colors'
+  use 'morhetz/gruvbox'
+  -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/playground'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
+  -- lsp saga
+  use 'glepnir/lspsaga.nvim'
   -- telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -29,6 +35,11 @@ return require('packer').startup(function()
   use 'vimwiki/vimwiki'
   -- vim-fugitive
   use 'tpope/vim-fugitive'
+  -- vim-test
+  use 'vim-test/vim-test'
+  -- LSP saga
+  use 'glepnir/lspsaga.nvim'
+  -- NvimTree
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',

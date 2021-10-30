@@ -4,6 +4,7 @@ default_dirs:
   - ~/repos/home_server
   - ~/repos/privat
   - ~/.newsboat
+  - ~/.scripts
 
 neovim_ppa: ppa:neovim-ppa/unstable
 ubuntu_packages:
@@ -35,6 +36,7 @@ ubuntu_packages:
   - software-properties-common
   - tldr
   - nodejs
+  - pandoc
 
 user_name: philmish
 node_version: 14
