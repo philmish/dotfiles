@@ -6,6 +6,12 @@
         tasks_from: setup
     - include_role:
         name: workstation
+        tasks_from: use_dotfiles
+    - include_role:
+        name: workstation
+        tasks_from: install_nerd_fonts
+    - include_role:
+        name: workstation
         tasks_from: neovim_setup
 
 

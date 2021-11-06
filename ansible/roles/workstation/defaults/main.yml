@@ -1,9 +1,9 @@
+dotfiles_repo: https://github.com/philmish/dotfiles
 default_dirs:
   - ~/repos/github.com
   - ~/repos/gitlab.com
   - ~/repos/home_server
   - ~/repos/privat
-  - ~/.newsboat
   - ~/.scripts
 
 neovim_ppa: ppa:neovim-ppa/unstable
@@ -37,6 +37,9 @@ ubuntu_packages:
   - tldr
   - nodejs
   - pandoc
+  - bat
+  - ddgr
+  - newsboat
 
 user_name: philmish
 node_version: 14

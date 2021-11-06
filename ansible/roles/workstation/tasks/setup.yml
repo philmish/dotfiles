@@ -13,10 +13,13 @@
     - '{{ ubuntu_packages }}'
   when: ansible_distribution == "Ubuntu"
 
-- name: set nvim config
-  tags: setup, neovim
-  copy:
-    src: '~/dotfiles/nvim'
-    dest: '~/.config'
-
+- name: Create Folders
+  tags: setup, folders
+  file:
+    path: '{{item}}'
+    mode: 0755
+    recurse: yes
+    state: directory
+  with_items:
+    - '{{default_dirs}}'
 

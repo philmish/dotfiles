@@ -24,3 +24,5 @@ vim.o.cmdheight=2
 vim.o.laststatus=2
 vim.o.modifiable=true
 vim.o.splitright=true
+
+vim.cmd('colorscheme gruvbox')

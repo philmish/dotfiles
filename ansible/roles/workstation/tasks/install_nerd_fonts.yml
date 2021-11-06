@@ -4,8 +4,8 @@
     repo: https://github.com/ryanoasis/nerd-fonts
     clone: yes
     depth: 1
-    dest: '~/'
+    dest: '~/repos/github.com/'
 
 - name: install fonts
   tags: setup, neovim, fonts
-  shell: bash ~/nerd-fonts/install.sh
+  shell: bash ~/repos/github.com/nerd-fonts/install.sh

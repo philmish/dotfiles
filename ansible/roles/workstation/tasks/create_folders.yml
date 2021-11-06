@@ -1,8 +1,0 @@
-- hosts: localhost
-  file:
-    path: '{{item}}'
-    mode: 0755
-    recurse: yes
-    state: directory
-  with_items:
-    - '{{default_dirs}}'
