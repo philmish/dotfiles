@@ -35,7 +35,6 @@ ubuntu_packages:
   - ripgrep
   - software-properties-common
   - tldr
-  - nodejs
   - pandoc
   - bat
   - ddgr

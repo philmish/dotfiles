@@ -1,0 +1,14 @@
+- name: Install nvm
+  tags: setup, nvm, nodejs
+  shell:
+    "curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash"
+
+- name: Load nvm
+  tags: setup, nvm
+  shell:
+    "source ~/.profile"
+
+- name: Install nodejs
+  tags: setup, nodejs
+  shell:
+    "nvm install {{ node_version }}"

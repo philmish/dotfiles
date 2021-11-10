@@ -30,10 +30,6 @@ https://thesephist.com/index.xml "~TheSephist"
 # NewsTwitter
 https://nitter.net/BBCWorld/rss "~BBC World"
 
-----------Reddit------------
-#Reddit
-https://www.reddit.com/r/politics/.rss "~r/politics"
-
 ----------Github------------
 #Github
 https://github.com/pallets/flask/commits/master.atom "~Flask"

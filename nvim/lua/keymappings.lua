@@ -40,6 +40,7 @@ vim.api.nvim_set_keymap('n', '<Leader>hs1', ':vsplit<CR> :lua require("harpoon.t
 vim.api.nvim_set_keymap('n', '<Leader>sa', ':Lspsaga hover_doc<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>rn', ':Lspsaga code_action rename<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>ft', ':Lspsaga open_floaterm<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>sd', ':lua require("lspsaga.provider").preview_definition()', {noremap = true, silent = true})
 
 -- Telescope
 vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<CR>', {noremap = true, silent = true})
