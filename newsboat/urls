@@ -33,6 +33,6 @@ https://nitter.net/BBCWorld/rss "~BBC World"
 ----------Github------------
 #Github
 https://github.com/pallets/flask/commits/master.atom "~Flask"
-https://gitlab.com/armandg1/tuir.atom "~Tuir"
+https://github.com/neovim/neovim/commits/master.atom "~Neovim"
 
 ---------MISC---------------
