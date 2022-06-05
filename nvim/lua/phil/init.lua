@@ -2,7 +2,11 @@
 require'nvim-tree'.setup {}
 
 -- lualine
-require'lualine'.setup{}
+require'lualine'.setup{
+    options = {
+        theme = "gruvbox_dark"
+    }
+}
 
 -- autopairsrequire
 require'nvim-autopairs'.setup{}
@@ -67,25 +71,51 @@ sources = cmp.config.sources({
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local on_attach = function (client, bufnr)
+
+    -- helper function for setting keymappings
+	local function buf_set_keymap(...)
+		vim.api.nvim_buf_set_keymap(bufnr, ...)
+	end
+
+	-- keymappings for active lsp client
+	local opts = { noremap = true, silent = true }
+
+	buf_set_keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+    buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+    buf_set_keymap("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+    buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+
+    buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+
+    vim.keymap.set("n", "<leader>di", "<cmd>Telescope diagnostics<CR>")
+end
+
 require('lspconfig')['pyright'].setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+    on_attach = on_attach
 }
 
 require('lspconfig')['tsserver'].setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+    on_attach = on_attach
 }
 
 require('lspconfig')['bashls'].setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+    on_attach = on_attach
 }
 
 require('lspconfig')['gopls'].setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+    on_attach = on_attach
 }
 
 require'lspconfig'.sumneko_lua.setup {
-  cmd = { sumenko_binary, "-E", sumenko_root .. "/main.lua"},
-  settings = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { sumenko_binary, "-E", sumenko_root .. "/main.lua"},
+    settings = {
     Lua = {
       runtime = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
@@ -104,5 +134,5 @@ require'lspconfig'.sumneko_lua.setup {
         enable = false,
       },
     },
-  },
+    },
 }

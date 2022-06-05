@@ -50,4 +50,9 @@ lua << EOF
 require('phil')
 EOF
 
+"Keymaps
+let mapleader = " "
+
+nnoremap <leader>e :NvimTreeToggle<CR> 
+nnoremap <leader>ff :Telescope find_files<CR>
 
