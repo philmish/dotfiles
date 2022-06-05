@@ -1,6 +1,9 @@
 -- NvimTree
 require'nvim-tree'.setup {}
 
+-- lualine
+require'lualine'.setup{}
+
 -- autopairsrequire
 require'nvim-autopairs'.setup{}
 

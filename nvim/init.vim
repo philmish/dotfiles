@@ -39,6 +39,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "harpoon
 Plug 'ThePrimeagen/harpoon'
 
+"lualine
+Plug 'nvim-lualine/lualine.nvim'
+
 call plug#end()
 
 colorscheme gruvbox
