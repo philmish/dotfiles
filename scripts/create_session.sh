@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-selected=$(find ~/repos/github.com ~/repos/gitlab.com ~/repos/privat ~/repos/work ~/repos/home_server ~/code_snippets ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+selected=$(find ~/code/repos ~/code/scripts  ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 name=$(echo "$selected" | rev | cut -d "/" -f1 | rev | tr . _)
 
 tmux_running=$(pgrep tmux)

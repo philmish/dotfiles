@@ -1,11 +1,18 @@
 "Global settings
 
 set visualbell
+set guicursor=
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 set relativenumber
+set nu
+set hidden
+set noerrorbells
+set incsearch
+set scrolloff=8
 
 
 

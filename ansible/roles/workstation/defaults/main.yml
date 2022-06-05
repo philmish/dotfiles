@@ -1,9 +1,9 @@
 dotfiles_repo: https://github.com/philmish/dotfiles
 default_dirs:
-  - ~/repos/github.com
-  - ~/repos/gitlab.com
-  - ~/repos/home_server
-  - ~/repos/privat
+  - ~/code/repos
+  - ~/code/scripts
+  - ~/code/work
+  - ~/code/poc
   - ~/.scripts
 
 neovim_ppa: ppa:neovim-ppa/unstable
