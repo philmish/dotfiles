@@ -62,4 +62,5 @@ let mapleader = " "
 
 nnoremap <leader>e :NvimTreeToggle<CR> 
 nnoremap <leader>ff :Telescope find_files<CR>
-
+nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>vs :vsplit<CR>
