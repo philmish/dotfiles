@@ -1,5 +1,4 @@
 "Global settings
-
 set visualbell
 set guicursor=
 set encoding=utf-8
@@ -33,6 +32,9 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
+
+"Annotation
+Plug 'danymat/neogen'
 
 "Telescope
 Plug 'nvim-lua/popup.nvim'

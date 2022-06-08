@@ -89,6 +89,9 @@ local on_attach = function (client, bufnr)
     buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 
     vim.keymap.set("n", "<leader>di", "<cmd>Telescope diagnostics<CR>")
+
+    vim.keymap.set("n", "<leader>cf", "<cmd>:lua require'neogen'.generate({ type = 'func'})<CR>", opts)
+
 end
 
 require('lspconfig')['pyright'].setup {
@@ -136,3 +139,31 @@ require'lspconfig'.sumneko_lua.setup {
     },
     },
 }
+
+-- neogen
+require('neogen').setup({
+    snippet_engine = "luasnip",
+    enabled = true,
+    languages = {
+        lua = {
+            template = {
+                annotation_convention = "ldoc",
+            }
+        },
+        python = {
+            template = {
+                annotation_convention = "google_docstring",
+            }
+        },
+        go = {
+            template = {
+                annotation_convention = "godoc"
+            }
+        },
+        javascript = {
+            template = {
+                annotation_convention = "jsdoc",
+            }
+        }
+    }
+})
