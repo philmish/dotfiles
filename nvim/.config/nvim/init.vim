@@ -51,6 +51,9 @@ Plug 'ThePrimeagen/harpoon'
 "lualine
 Plug 'nvim-lualine/lualine.nvim'
 
+Plug 'renerocksai/calendar-vim'
+Plug 'renerocksai/telekasten.nvim'
+
 call plug#end()
 
 colorscheme gruvbox
