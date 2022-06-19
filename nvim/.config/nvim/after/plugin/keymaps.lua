@@ -15,7 +15,11 @@ nnoremap('<leader>vs', ':vsplit<CR>', {})
 -- Use escape in terminal mode
 tnoremap('<Esc>', '<C-\\><C-n>')
 
-nnoremap('<leader>h', ':set hlsearch!<CR>')
+-- Untoggle highlight search
+nnoremap('<leader>hl', ':set hlsearch!<CR>')
+
+-- Fugitive
+nnoremap('<leader>g', ':Git<CR>')
 
 -- NvimTree
 nnoremap('<leader>e', ':NvimTreeToggle<CR>')

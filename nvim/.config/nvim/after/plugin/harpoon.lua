@@ -4,9 +4,11 @@ require('harpoon').setup({
         },
     projects = {
         ["$HOME/code/repos/dotfiles"] = {
-            marks = {
+            mark = {
+                marks = {
                     "nvim/.config/nvim/init.vim",
                 }
+            }
         }
     }
 })
