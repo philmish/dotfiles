@@ -23,9 +23,14 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'folke/tokyonight.nvim'
 
+"NvimTree File Explorer
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
+
+"Git integration
 Plug 'tpope/vim-fugitive'
+
+"Autopairs
 Plug 'windwp/nvim-autopairs'
 
 "LSP
@@ -68,6 +73,5 @@ lua << EOF
 require('phil')
 EOF
 
-"Keymaps
+"Keymaps leader
 let mapleader = " "
-
