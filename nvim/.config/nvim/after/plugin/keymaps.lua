@@ -14,3 +14,11 @@ nnoremap('<leader>vs', ':vsplit<CR>', {})
 
 -- Use escape in terminal mode
 tnoremap('<Esc>', '<C-\\><C-n>')
+
+nnoremap('<leader>h', ':set hlsearch!<CR>')
+
+-- NvimTree
+nnoremap('<leader>e', ':NvimTreeToggle<CR>')
+
+-- Telescope
+nnoremap('<leader>ff', ':Telescope find_files<CR>')

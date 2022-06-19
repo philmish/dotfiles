@@ -19,7 +19,10 @@ set scrolloff=8
 
 call plug#begin()
 
+"Colors
 Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim'
+
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tpope/vim-fugitive'
@@ -32,6 +35,9 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
+
+"Undotree
+Plug 'mbbill/undotree'
 
 "Annotation
 Plug 'danymat/neogen'
@@ -65,7 +71,3 @@ EOF
 "Keymaps
 let mapleader = " "
 
-nnoremap <leader>e :NvimTreeToggle<CR> 
-nnoremap <leader>ff :Telescope find_files<CR>
-nnoremap <leader>h :set hlsearch!<CR>
-nnoremap <leader>vs :vsplit<CR>
