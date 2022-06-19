@@ -1,3 +1,4 @@
+
 -- NvimTree
 require'nvim-tree'.setup {}
 
@@ -11,7 +12,8 @@ require'lualine'.setup{
 -- autopairsrequire
 require'nvim-autopairs'.setup{}
 
-local sumenko_root = '/home/phil/lua-language-server'
+local homedir = vim.fn.expand("~/")
+local sumenko_root = homedir ..  'lua-language-server'
 local sumenko_binary = sumenko_root .. '/bin/lua-language-server'
 
 -- Setup nvim-cmp.
