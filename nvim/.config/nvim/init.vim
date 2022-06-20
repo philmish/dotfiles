@@ -78,7 +78,7 @@ call plug#end()
 colorscheme gruvbox
 
 lua << EOF
-require('phil')
+    require('phil')
 EOF
 
 "Keymaps leader

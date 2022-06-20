@@ -11,7 +11,6 @@ require'lualine'.setup{
 -- autopairsrequire
 require'nvim-autopairs'.setup{}
 
-<<<<<<< HEAD
 local homedir = vim.fn.expand("~/")
 local sumenko_root = homedir ..  'lua-language-server'
 local sumenko_binary = sumenko_root .. '/bin/lua-language-server'
@@ -122,7 +121,7 @@ require('lspconfig')['vuels'].setup {
     on_attach = on_attach,
 }
 
-require'lspconfig'.sumneko_lua.setup {
+require('lspconfig').sumneko_lua.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = { sumenko_binary, "-E", sumenko_root .. "/main.lua"},
@@ -148,8 +147,6 @@ require'lspconfig'.sumneko_lua.setup {
     },
 }
 
-=======
->>>>>>> db4a1b43a566f90cd536fbcb13b6e9cb3f4edd04
 -- Telekasten
 
 local home = vim.fn.expand("~/.zettelkasten")
