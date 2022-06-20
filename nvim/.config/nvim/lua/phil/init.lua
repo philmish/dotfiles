@@ -113,7 +113,13 @@ require('lspconfig')['bashls'].setup {
 
 require('lspconfig')['gopls'].setup {
 	capabilities = capabilities,
-    on_attach = on_attach
+    on_attach = on_attach,
+    --cmd = { "gopls.exe" } use this when working with wsl
+}
+
+require('lspconfig')['vuels'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 require'lspconfig'.sumneko_lua.setup {
@@ -265,3 +271,5 @@ require('telekasten').setup({
     -- should all links be updated when a file is renamed
     rename_update_links = true,
 })
+
+require("phil.debugging")

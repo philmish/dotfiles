@@ -62,8 +62,16 @@ Plug 'ThePrimeagen/harpoon'
 "lualine
 Plug 'nvim-lualine/lualine.nvim'
 
+"telekasten
 Plug 'renerocksai/calendar-vim'
 Plug 'renerocksai/telekasten.nvim'
+
+"debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'nvim-telescope/telescope-dap.nvim'
 
 call plug#end()
 
