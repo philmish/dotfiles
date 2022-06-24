@@ -24,6 +24,9 @@ nnoremap('<leader>g', ':Git<CR>')
 -- NvimTree
 nnoremap('<leader>e', ':NvimTreeToggle<CR>')
 
+-- Undotree
+nnoremap('<leader>u', ':UndotreeToggle<CR>')
+
 -- Telescope
 nnoremap('<leader>ff', ':Telescope find_files<CR>')
 
