@@ -6,8 +6,8 @@ default_dirs:
   - ~/code/poc
   - ~/.scripts
   - ~/Wallpapers
+  - ~/fonts
 
-neovim_ppa: ppa:neovim-ppa/unstable
 ubuntu_packages:
   - build-essential
   - cmake
@@ -39,5 +39,4 @@ ubuntu_packages:
   - ddgr
   - newsboat
 
-user_name: philmish
-node_version: 14
+user_name: phil

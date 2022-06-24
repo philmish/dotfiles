@@ -12,6 +12,7 @@ set hidden
 set noerrorbells
 set incsearch
 set scrolloff=8
+set nowrap
 
 
 

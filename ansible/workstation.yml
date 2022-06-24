@@ -1,0 +1,21 @@
+- name: Workstation
+  hosts: localhost
+  tasks:
+    - name: Update Packages (Ubuntu)
+      tags: ubuntu, update
+      apt:
+        update_cache: yes
+        upgrade: yes
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Update Packages (Arch)
+      tags: arch, update
+      pacman:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install nvm
+      tags: install, nvm, nodejs
+      shell:
+        "curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.profile"
+
