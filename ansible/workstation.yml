@@ -28,3 +28,11 @@
         state: directory
       with_items:
         - '{{default_dirs}}'
+
+    - name: Install global npm Packages
+      tags: init, setup, node
+      npm:
+        name: '{{item}}'
+        global: yes
+      with_items:
+        - '{{node_gloabel_packages}}'
