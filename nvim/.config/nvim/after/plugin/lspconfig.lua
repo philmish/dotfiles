@@ -19,6 +19,7 @@ local on_attach = function (client,bufnr)
     nnoremap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", silent)
     nnoremap("<leader>di", "<cmd>Telescope diagnostics<CR>", silent)
     nnoremap("<leader>td", "<cmd>Telescope lsp_type_definitions<CR>", silent)
+    nnoremap("<leader>fmtc", "<cmd>lua vim.lsp.buf.formatting()<CR>", silent)
 
     nnoremap("<leader>cf", "<cmd>lua require'neogen'.generate({ type = 'func'})<CR>", silent)
     -- if the lsp provides formatting, format on file write
@@ -26,7 +27,7 @@ local on_attach = function (client,bufnr)
         vim.cmd([[
             augroup formatting
                 autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()
             augroup END
         ]])
     end
