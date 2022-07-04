@@ -74,6 +74,9 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-telescope/telescope-dap.nvim'
 
+"Neoformat (code formatting)
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 colorscheme gruvbox

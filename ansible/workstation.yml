@@ -36,3 +36,13 @@
         global: yes
       with_items:
         - '{{node_gloabel_packages}}'
+
+    - name: Install prettier
+      tags: prettier, setup
+      shell:
+        "npm install -g --save-dev --save-exact prettier"
+
+    - name: Install prettier-pug
+      tags: pug, setup
+      shell:
+        "npm install -g --save-dev @prettier/plugin-pug"
