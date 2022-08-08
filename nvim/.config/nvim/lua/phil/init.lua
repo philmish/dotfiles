@@ -92,6 +92,7 @@ local on_attach = function (client, bufnr)
     vim.keymap.set("n", "<leader>di", "<cmd>Telescope diagnostics<CR>")
 
     vim.keymap.set("n", "<leader>cf", "<cmd>:lua require'neogen'.generate({ type = 'func'})<CR>", opts)
+    vim.keymap.set("n", "<leader>cf", "<cmd>:lua require'neogen'.generate({ type = 'class'})<CR>", opts)
 
 end
 

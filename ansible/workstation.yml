@@ -19,16 +19,6 @@
       shell:
         "curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.profile"
 
-    - name: Create dirs
-      tags: setup, directories
-      file:
-        path: '{{item}}'
-        mode: 0755
-        recurse: yes
-        state: directory
-      with_items:
-        - '{{default_dirs}}'
-
     - name: Install global npm Packages
       tags: init, setup, node
       npm:

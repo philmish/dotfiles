@@ -30,3 +30,4 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 require("phil.debugging.node")
+require("phil.debugging.php")
