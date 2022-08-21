@@ -41,3 +41,10 @@ nnoremap('<Leader>h1', ':lua require("harpoon.ui").nav_file(1)<CR>', silent)
 nnoremap('<Leader>h2', ':lua require("harpoon.ui").nav_file(1)<CR>', silent)
 nnoremap('<Leader>h3', ':lua require("harpoon.ui").nav_file(1)<CR>', silent)
 nnoremap ('<Leader>hs1', ':vsplit<CR> :lua require("harpoon.term").sendCommand(1,1)<CR>', silent)
+
+-- dadbod ui
+nnoremap('<Leader>du', ':DBUIToggle<CR>', silent)
+nnoremap('<Leader>df', ':DBUIFindBuffer<CR>', silent)
+nnoremap('<Leader>dr', ':DBUIRenameBuffer<CR>', silent)
+nnoremap('<Leader>dl', ':DBUILastQueryInfo<CR>', silent)
+

@@ -77,6 +77,10 @@ Plug 'nvim-telescope/telescope-dap.nvim'
 "Neoformat (code formatting)
 Plug 'sbdchd/neoformat'
 
+"vim-dadbod (SQL)
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+
 call plug#end()
 
 colorscheme gruvbox
@@ -87,3 +91,6 @@ EOF
 
 "Keymaps leader
 let mapleader = " "
+
+"dadbod ui
+let g:db_ui_save_location = '~/.config/db_ui'
