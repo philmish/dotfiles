@@ -22,6 +22,11 @@ require('neogen').setup({
             template = {
                 annotation_convention = "jsdoc",
             }
+        },
+        php = {
+            template = {
+                annotation_convention = "phpdoc",
+            }
         }
     }
 })
