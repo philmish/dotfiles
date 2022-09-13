@@ -103,5 +103,19 @@ ls.add_snippets(nil, {
                 inode(0)
             }
         )),
+        s("trc", fmt(
+        [[ 
+        try {{
+            {}
+        }} catch ({}) {{
+            {}
+        }}
+        ]],
+        {
+            inode(2),
+            cnode(1, {tnode"Exception $e", inode(nil, "exception") }),
+            inode(0)
+        }
+        )),
     }
 })
