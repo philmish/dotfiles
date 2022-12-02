@@ -10,6 +10,9 @@ nnoremap('<C-j>', '<C-W>j', silent)
 nnoremap('<C-l>', '<C-W>l', silent)
 nnoremap('<C-k>', '<C-W>k', silent)
 
+-- LSP Code actions
+nnoremap('<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
+
 -- Splitting
 nnoremap('<leader>vs', ':vsplit<CR>', {})
 
@@ -26,7 +29,7 @@ vnoremap("K", ":m '<-2<CR>gv=gv")
 tnoremap('<Esc>', '<C-\\><C-n>')
 
 -- Fugitive
-nnoremap('<leader>g', ':Git<CR>')
+--nnoremap('<leader>g', ':Git<CR>')
 
 -- NvimTree
 nnoremap('<leader>e', ':NvimTreeToggle<CR>')
