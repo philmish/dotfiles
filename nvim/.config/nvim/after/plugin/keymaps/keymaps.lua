@@ -13,6 +13,15 @@ nnoremap('<C-k>', '<C-W>k', silent)
 -- LSP Code actions
 nnoremap('<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
 
+-- better half page jumps
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+
+-- copy to system clipboard with leader y
+nnoremap("<leader>y", "\"+y")
+vnoremap("<leader>y", "\"+y")
+nnoremap("<leader>Y", "\"+Y")
+
 -- Splitting
 nnoremap('<leader>vs', ':vsplit<CR>', {})
 
