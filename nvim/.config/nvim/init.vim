@@ -13,7 +13,9 @@ set noerrorbells
 set incsearch
 set scrolloff=8
 set nowrap
-
+set termguicolors
+set undodir=$HOME/.vim/undodir
+set undofile
 
 
 "Plugins
@@ -47,6 +49,9 @@ Plug 'mbbill/undotree'
 
 "Annotation
 Plug 'danymat/neogen'
+
+"Notifications
+Plug 'rcarriga/nvim-notify'
 
 "Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -89,8 +94,8 @@ lua << EOF
     require('phil')
 EOF
 
-"Keymaps leader
+" Keymaps leader
 let mapleader = " "
 
-"dadbod ui
+" dadbod ui
 let g:db_ui_save_location = '~/.config/db_ui'

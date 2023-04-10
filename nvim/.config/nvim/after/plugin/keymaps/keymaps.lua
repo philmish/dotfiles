@@ -22,6 +22,13 @@ nnoremap("<leader>y", "\"+y")
 vnoremap("<leader>y", "\"+y")
 nnoremap("<leader>Y", "\"+Y")
 
+-- better search jumping
+nnoremap("n", "nzzzv")
+nnoremap("N", "Nzzzv")
+
+-- resource current file
+nnoremap("<leader><leader>x", ":so %<CR>")
+
 -- Splitting
 nnoremap('<leader>vs', ':vsplit<CR>', {})
 
