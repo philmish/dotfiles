@@ -39,4 +39,19 @@ M.run_tests = function ()
     M._loaded_driver._run_test()
 end
 
+M.run_with_coverage =function ()
+    M._load_ft()
+    M.load_driver(M._curr_ft)
+    if not M._loaded_driver then
+        print("No driver for current file type ", M._curr_ft)
+        return
+    end
+    if not M._loaded_driver._run_with_coverage then
+        print("Current driver does not implement testing with coverage: ", M.load_driver)
+        return
+    end
+    M._loaded_driver._run_with_coverage()
+end
+
+
 return M
