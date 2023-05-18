@@ -1,5 +1,5 @@
 local ls = require "luasnip"
-local s = ls.s
+local snippet = ls.s
 local inode = ls.insert_node
 local cnode = ls.choice_node
 local tnode = ls.text_node
@@ -8,7 +8,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets(nil, {
     php = {
-        s("st", fmt(
+        snippet("st", fmt(
             [[
             <?php declare(strict_types=1);
 
@@ -18,7 +18,7 @@ ls.add_snippets(nil, {
             ]],
             { inode(1), inode(0)}
         )),
-        s("fc", fmt(
+        snippet("fc", fmt(
             [[ 
             final class {} {} {} {{
                 
@@ -35,7 +35,7 @@ ls.add_snippets(nil, {
                 inode(0)
             }
         )),
-        s("ac", fmt(
+        snippet("ac", fmt(
             [[ 
             abstract class {} {{
                 {}
@@ -43,7 +43,7 @@ ls.add_snippets(nil, {
             ]],
             { inode(1), inode(0) }
         )),
-        s("tc", fmt(
+        snippet("tc", fmt(
             [[ 
             use PHPUnit\Framework\TestCase;
 
@@ -56,7 +56,7 @@ ls.add_snippets(nil, {
             ]],
             { inode(1), inode(2), inode(0) }
         )),
-        s("tf", fmt(
+        snippet("tf", fmt(
             [[ 
                 public function test{}(): void {{
                     {}
@@ -64,7 +64,7 @@ ls.add_snippets(nil, {
             ]],
             { inode(1), inode(0) }
         )),
-        s("pf", fmt(
+        snippet("pf", fmt(
             [[
                 public function {}({}): {} {{
                     {}
@@ -77,7 +77,7 @@ ls.add_snippets(nil, {
                 inode(0)
             }
         )),
-        s("pvf", fmt(
+        snippet("pvf", fmt(
             [[
                 private function {}({}): {} {{
                     {}
@@ -90,7 +90,7 @@ ls.add_snippets(nil, {
                 inode(0)
             }
         )),
-        s("prf", fmt(
+        snippet("prf", fmt(
             [[
                 protected function {}({}): {} {{
                     {}
@@ -103,7 +103,7 @@ ls.add_snippets(nil, {
                 inode(0)
             }
         )),
-        s("trc", fmt(
+        snippet("trc", fmt(
         [[ 
         try {{
             {}

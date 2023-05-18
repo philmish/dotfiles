@@ -1,35 +1,21 @@
-local sorters = require("telescope.sorters")
-local actions = require("telescope.actions")
-local previewers = require("telescope.previewers")
-local layout_actions = require("telescope.actions.layout")
+local builtin = require("telescope.builtin")
 
-require('telescope').setup({
-    defaults = {
-        file_sorter = sorters.get_fzy_sorter,
-        prompt_prefix = ">",
-        color_devicons = true,
+-- File fuzzy find
+vim.keymap.set("n", "<leader>pf", builtin.find_files)
+vim.keymap.set("n", "<leader>ps", function()
+    builtin.grep_string({search = vim.fn.input("> ")})
+end)
+vim.keymap.set("n", "<leader>pg", builtin.grep_string)
 
-        file_previewer = previewers.vim_buffer_cat.new,
-        grep_previewer = previewers.vim_buffer_vimgrep.new,
-        qflist_previewer = previewers.vim_buffer_qflist.new,
+-- Git Stuff
+vim.keymap.set("n", "<leader>gf", builtin.git_files)
+vim.keymap.set("n", "<leader>gb", builtin.git_branches)
+vim.keymap.set("n", "<leader>gc", builtin.git_commits)
 
-        layout_config = {
-            horizontal = {
-                preview_cutoff = 0,
-            },
-        },
+-- Vim Help tags
+vim.keymap.set("n", "<leader>vh", builtin.help_tags)
 
-        mappings = {
-            i = {
-                ["<C-p>"] = layout_actions.toggle_preview,
-                ["<C-q>"] = actions.send_to_qflist,
-            }
-        }
-    },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-        }
-    }
-})
+-- Diagnostics
+vim.keymap.set("n", "<leader>di", "<cmd>Telescope diagnostics<CR>")
+
+require("telescope").load_extension("dap")
