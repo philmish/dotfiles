@@ -1,7 +1,6 @@
 vim.opt.guicursor = ""
 
 vim.opt.background = "dark"
-vim.cmd([[colorscheme kanagawa]])
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

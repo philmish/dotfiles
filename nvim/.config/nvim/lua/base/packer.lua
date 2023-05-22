@@ -76,23 +76,7 @@ return require('packer').startup(function(use)
     use 'folke/neodev.nvim'
 
     -- Toggle inverse values for booleans and other configured pairs
-    use {
-        'rmagatti/alternate-toggler',
-        config = function ()
-            require("alternate-toggler").setup({
-                alternates = {
-                    ["=="] = "!=",
-                    ["==="] = "!==",
-                }
-            })
-
-            vim.keymap.set(
-                "n",
-                "<leader>!",
-                "<cmd>lua require('alternate-toggler').toggleAlternate()<CR>"
-            )
-        end
-    }
+    use 'rmagatti/alternate-toggler'
 
     use {
         'nvim-lualine/lualine.nvim',
