@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>vh", builtin.help_tags)
 -- Diagnostics
 vim.keymap.set("n", "<leader>di", "<cmd>Telescope diagnostics<CR>")
 
---References
+-- Navigate references
 vim.keymap.set("n", "<leader>rf", builtin.lsp_references)
 
 -- Layout
