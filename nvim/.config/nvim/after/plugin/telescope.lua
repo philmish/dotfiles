@@ -18,4 +18,18 @@ vim.keymap.set("n", "<leader>vh", builtin.help_tags)
 -- Diagnostics
 vim.keymap.set("n", "<leader>di", "<cmd>Telescope diagnostics<CR>")
 
+--References
+vim.keymap.set("n", "<leader>rf", builtin.lsp_references)
+
+-- Layout
+require("telescope").setup {
+    defaults = {
+        layout_config = {
+            horizontal = {
+                preview_cutoff = 0,
+           }
+        }
+    }
+}
+
 require("telescope").load_extension("dap")
