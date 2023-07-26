@@ -36,3 +36,17 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Use escape in terminal mode to end insert mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- Generate string in uuid4 format at current cursor position
+vim.keymap.set("i", "<C-g>", function ()
+    local random = math.random
+    local template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+    local uuid = string.gsub(template, "[xy]", function (c)
+        local tmp = (c == "x") and random(0, 0xf) or random(8, 0xb)
+        return string.format("%x", tmp)
+    end)
+    local pos = vim.api.nvim_win_get_cursor(0)[2]
+    local line = vim.api.nvim_get_current_line()
+    local nline = line:sub(0, pos) .. uuid .. line:sub(pos + 1)
+    vim.api.nvim_set_current_line(nline)
+end)
