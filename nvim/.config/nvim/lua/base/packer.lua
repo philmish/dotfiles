@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     -- colorschemes
     use 'ellisonleao/gruvbox.nvim'
     use 'rebelot/kanagawa.nvim'
+    use 'EdenEast/nightfox.nvim'
 
     use {
         'nvim-tree/nvim-tree.lua',
