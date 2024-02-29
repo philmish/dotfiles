@@ -4,10 +4,13 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "b0o/schemastore.nvim",
+    { "folke/neodev.nvim", opts = {} },
 
     { "j-hui/fidget.nvim", opts = {} },
   },
   config = function()
+    require("neodev").setup({})
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("phil-custom-lsp-attach", { clear = true }),
       callback = function(event)
@@ -53,16 +56,31 @@ return {
       pyright = {},
       rust_analyzer = {},
       tsserver = {},
+      jsonls = {
+        settings = {
+          json = {
+            schemas = require("schemastore").json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      },
+      yamlls = {
+        settings = {
+          yaml = {
+            schemaStore = {
+              enable = false,
+              url = "",
+            },
+            schemas = require("schemastore").yaml.schemas(),
+          },
+        },
+      },
       lua_ls = {
         settings = {
           Lua = {
             runtime = { version = "LuaJIT" },
             workspace = {
               checkThirdParty = false,
-              library = {
-                "${3rd}/luv/library",
-                unpack(vim.api.nvim_get_runtime_file("", true)),
-              },
             },
           },
         },
