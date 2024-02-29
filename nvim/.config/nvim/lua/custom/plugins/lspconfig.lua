@@ -67,30 +67,30 @@ return {
           },
         },
       },
-      }
+    }
 
-      require("mason").setup()
+    require("mason").setup()
 
-      local ensure_installed = vim.tbl_keys(servers or {})
+    local ensure_installed = vim.tbl_keys(servers or {})
 
-      vim.list_extend(ensure_installed, {
-        "stylua",
-      })
-      require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+    vim.list_extend(ensure_installed, {
+      "stylua",
+    })
+    require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
-      require("mason-lspconfig").setup {
-        handlers = {
-          function(server_name)
-            local server = servers[server_name]  or {}
-            require("lspconfig")[server_name].setup {
-              cmd = server.cmd,
-              settings = server.settings,
-              filetypes = server.filetypes,
-              capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {}),
-            }
-          end,
-        },
-      }
-      end,
-      }
+    require("mason-lspconfig").setup {
+      handlers = {
+        function(server_name)
+          local server = servers[server_name]  or {}
+          require("lspconfig")[server_name].setup {
+            cmd = server.cmd,
+            settings = server.settings,
+            filetypes = server.filetypes,
+            capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {}),
+          }
+        end,
+      },
+    }
+  end,
+}
 
