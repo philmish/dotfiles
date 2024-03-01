@@ -88,5 +88,6 @@ require("lazy").setup {
   require "custom.plugins.mini_nvim",
   require "custom.plugins.lualine",
   require "custom.plugins.harpoon",
+  require "custom.plugins.conform",
 }
 -- vim: ts=2 sts=2 sw=2 et
