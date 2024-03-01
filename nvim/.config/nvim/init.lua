@@ -4,6 +4,8 @@ vim.g.maplocalleader = " "
 -- Basic Setup which does not require any plugins
 require "phil.options"
 require "phil.keymaps"
+require "phil.disable_builtins"
+require "phil.custom_commands"
 
 -- Install packagemanager lazy.nvim
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -14,7 +16,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup {
-  -- [[ 
+  -- [[
   -- Plugins requiring little to no setup after installation are
   -- directly imported and configured here.
   --
@@ -65,7 +67,7 @@ require("lazy").setup {
   },
   -- Nice highlighting for TODO comments
   {
-    "folke/todo-comments.nvim", 
+    "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
