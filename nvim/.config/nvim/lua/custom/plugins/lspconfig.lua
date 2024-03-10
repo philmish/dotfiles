@@ -52,9 +52,14 @@ return {
     )
 
     local servers = {
+      bashls = {},
       gopls = {},
       pyright = {},
       rust_analyzer = {},
+      html = {},
+      templ = {},
+      cssls = {},
+      tailwindcss = {},
       tsserver = {},
       jsonls = {
         settings = {
@@ -85,31 +90,39 @@ return {
           },
         },
       },
+      sqlls = {},
+      marksman = {},
+      nil_ls = {},
+      ocamllsp = {},
     }
+
+    local manualy_installed_servers = {"ocamllsp", "templ"}
 
     require("mason").setup()
 
-    local ensure_installed = vim.tbl_keys(servers or {})
+    local ensure_installed_servers = vim.tbl_keys(servers or {})
+    local ensure_installed_tools = {"stylua", "ruff"}
 
-    vim.list_extend(ensure_installed, {
-      "stylua",
-      "ruff",
+    local ensure_installed = vim.tbl_filter(function (name)
+      return not vim.tbl_contains(manualy_installed_servers, name)
+    end, ensure_installed_servers)
+
+    vim.list_extend(ensure_installed, ensure_installed_tools)
+    require("mason-tool-installer").setup({
+      ensure_installed = ensure_installed,
+      debounce_hours = 12,
     })
-    require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
-    require("mason-lspconfig").setup {
-      handlers = {
-        function(server_name)
-          local server = servers[server_name]  or {}
-          require("lspconfig")[server_name].setup {
-            cmd = server.cmd,
-            settings = server.settings,
-            filetypes = server.filetypes,
-            capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {}),
-          }
-        end,
-      },
-    }
+    for server, config in pairs(servers) do
+      require("lspconfig")[server].setup({
+        capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {}),
+        filetypes = config.filetypes,
+        handlers = vim.tbl_deep_extend("force", {}, config.handlers or {}),
+        settings = config.settings,
+      })
+    end
+
+    require("mason-lspconfig").setup {}
   end,
 }
 
