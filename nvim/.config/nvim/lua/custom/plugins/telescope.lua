@@ -16,20 +16,20 @@ return {
     require("telescope").setup {
       defaults = {
         file_ignore_patterns = {
-          "node_modules",
           ".git",
           ".venv",
-          ".*venv",
+          ".*-venv",
+          "node_modules",
         },
+        initial_mode = "normal",
       },
+      extensions = {},
       pickers = {
         find_files = {
           hidden = true,
         },
       },
     }
-
-    pcall(require("telescope").load_extension, "fzf")
 
     local builtin = require "telescope.builtin"
     vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
@@ -42,7 +42,6 @@ return {
     vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
     vim.keymap.set("n", "<leader>s", builtin.oldfiles, { desc = "[S]earch recent files ('.' for repeat)" })
     vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
-
     vim.keymap.set("n", "<leader>/", function()
       builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdowns {
         winblend = 10,

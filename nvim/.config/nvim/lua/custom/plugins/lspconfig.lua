@@ -7,7 +7,11 @@ return {
     "b0o/schemastore.nvim",
     { "folke/neodev.nvim", opts = {} },
 
-    { "j-hui/fidget.nvim", opts = {} },
+    {
+      "j-hui/fidget.nvim",
+      event = { "BufEnter" },
+      opts = {},
+    },
   },
   config = function()
     require("neodev").setup({})
@@ -51,16 +55,17 @@ return {
       "force", capabilities, require("cmp_nvim_lsp").default_capabilities()
     )
 
+    local manualy_installed_servers = { "templ", "ocamllsp" }
     local servers = {
       bashls = {},
       gopls = {},
       pyright = {},
       rust_analyzer = {},
+      tsserver = {},
       html = {},
       templ = {},
       cssls = {},
       tailwindcss = {},
-      tsserver = {},
       jsonls = {
         settings = {
           json = {
@@ -94,35 +99,33 @@ return {
       marksman = {},
       nil_ls = {},
       ocamllsp = {},
+      clangd = {},
     }
-
-    local manualy_installed_servers = {"ocamllsp", "templ"}
 
     require("mason").setup()
 
-    local ensure_installed_servers = vim.tbl_keys(servers or {})
-    local ensure_installed_tools = {"stylua", "ruff"}
-
-    local ensure_installed = vim.tbl_filter(function (name)
+    local auto_installed_names = vim.tbl_keys(servers)
+    local mason_ensure_installed = vim.tbl_filter(function(name)
       return not vim.tbl_contains(manualy_installed_servers, name)
-    end, ensure_installed_servers)
+    end, auto_installed_names)
 
-    vim.list_extend(ensure_installed, ensure_installed_tools)
-    require("mason-tool-installer").setup({
-      ensure_installed = ensure_installed,
-      debounce_hours = 12,
+    vim.list_extend(mason_ensure_installed, {
+      "stylua",
+      "ruff",
     })
+    require("mason-tool-installer").setup { ensure_installed = mason_ensure_installed }
 
-    for server, config in pairs(servers) do
-      require("lspconfig")[server].setup({
-        capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {}),
-        filetypes = config.filetypes,
-        handlers = vim.tbl_deep_extend("force", {}, config.handlers or {}),
-        settings = config.settings,
+    for name, settings in pairs(servers) do
+      require("lspconfig")[name].setup({
+        capabilities = vim.tbl_deep_extend(
+          "force", {}, capabilities, settings.capabilities or {}
+        ),
+        settings = settings.settings,
+        handlers = vim.tbl_deep_extend("force", {}, settings.handlers or {}),
+        filetypes = settings.filetypes
       })
     end
 
     require("mason-lspconfig").setup {}
   end,
 }
-

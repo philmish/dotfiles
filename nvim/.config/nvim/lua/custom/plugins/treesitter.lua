@@ -7,6 +7,7 @@ return {
       ensure_installed = {
         "bash", "lua", "c", "html", "markdown",
         "vim", "vimdoc", "rust", "go", "json",
+        "python", "templ",
       },
       auto_install = true,
       highlight = { enable = true },
