@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-WP_DIR="~/Wallpapers"
+WP_DIR="~/wallpapers"
 
 while getopts d: flag
 do
@@ -23,4 +23,3 @@ fi
 
 selected=`ls $WP_DIR | fzf`
 `feh --bg-scale $WP_DIR/$selected`
-`wal -i $WP_DIR/$selected`
