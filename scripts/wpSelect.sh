@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 WP_DIR="~/wallpapers"
-
 while getopts d: flag
 do
     case "${flag}" in

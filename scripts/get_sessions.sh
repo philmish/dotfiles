@@ -13,4 +13,4 @@ fi
 
 selected=$(tmux list-sessions | fzf)
 name=$(echo "$selected" | awk -F: '{print $1}')
-`tmux attach-session -t "$name"`
+tmux attach-session -t "$name"
