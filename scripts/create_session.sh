@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-selected=$(find ~/projects/public ~/projects/private  ~/.config -mindepth ~/code/repos 1 -maxdepth 1 -type d | fzf)
+selected=$(find ~/projects/public ~/projects/private  ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 name=$(echo "$selected" | rev | cut -d "/" -f1 | rev | tr . _)
 
 tmux_running=$(pgrep tmux)
@@ -12,4 +12,6 @@ fi
 
 if ! tmux has-session -t $name 2>/dev/null; then
     tmux new-session -ds $name -c $selected
+else
+    tmux attach-session -t $name
 fi
