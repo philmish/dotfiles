@@ -1,4 +1,4 @@
-alias dotfiles="nvim ~/code/repos/dotfiles/"
+alias dotfiles="nvim ~/projects/public/dotfiles"
 alias bashrc="nvim ~/.bashrc"
 
 alias dc="docker compose"
