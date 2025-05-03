@@ -4,12 +4,12 @@ alias bashrc="nvim ~/.bashrc"
 alias dc="docker compose"
 
 alias ..="cd .."
-alias ls="ls -lh"
+alias ls="lsd"
 alias ll="lsd -l"
 alias la="lsd -la"
 
-alias tmC="bash ~/.scripts/create_session.sh"
-alias tmGet="bash ~/.scripts/get_session.sh"
-alias sWp="bash ~/.scripts/wpSelect.sh"
+alias tmxc="bash ~/scripts/tmxc.sh"
+alias tmxg="bash ~/scripts/tmxg.sh"
+alias sWp="bash ~/scripts/wpSelect.sh"
 
 alias hgrep="history | grep"
