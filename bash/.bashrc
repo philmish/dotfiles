@@ -11,3 +11,8 @@ fi
 
 export EDITOR="nvim"
 export PAGER="bat -p"
+
+# completion
+if [[ -f source /usr/share/bash-completion/completions/git ]]; then
+    source /usr/share/bash-completion/completions/git
+fi
