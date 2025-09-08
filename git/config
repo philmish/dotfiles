@@ -1,0 +1,11 @@
+[core]
+    editor = nvim
+    pager = bat
+    excludesfile = ~/.config/git/global_ignores
+
+[alias]
+    pl = pull
+    st = status
+
+[init]
+    defaultBranch = main

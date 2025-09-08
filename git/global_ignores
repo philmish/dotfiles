@@ -1,0 +1,12 @@
+# secrets
+.env
+
+# python
+__pycache__
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv
+.venv
+.ruff_cache/
