@@ -6,7 +6,6 @@ return {
     { "nvim-treesitter/nvim-treesitter" },
     { "nvim-tree/nvim-web-devicons" },
     { "debugloop/telescope-undo.nvim" },
-    { "nvim-telescope/telescope-file-browser.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   keys = function()
@@ -55,18 +54,6 @@ return {
             override_file_sorter = true,
             case_mode = "smart_case",
           },
-          file_browser = {
-            hijack_netrw = false,
-            respect_gitignore = false,
-            git_status = true,
-            hidden = {
-              file_browser = true,
-              folder_browser = false,
-            },
-            show_symlinks = true,
-            follow_symlinks = true,
-            grouped = true,
-          },
           undo = {
             side_by_side = true,
             layout_strategy = "vertical",
@@ -86,8 +73,6 @@ return {
     })
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("undo")
-    require("telescope").load_extension("file_browser")
-    vim.keymap.set("n", "<leader>fe", ":Telescope file_browser<CR>")
     vim.keymap.set("n", "<leader>u", ":Telescope undo<CR>")
   end,
 }
