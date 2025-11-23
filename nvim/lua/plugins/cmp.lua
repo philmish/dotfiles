@@ -10,7 +10,7 @@ local M = {
     { "hrsh7th/cmp-nvim-lua" },
     { "saadparwaiz1/cmp_luasnip" },
     { "hrsh7th/cmp-cmdline" },
-    { "L3MON4D3/LuaSnip", version = "2.*", run = "make install_jsregexp" },
+    { "L3MON4D3/LuaSnip", version = "v2.*", run = "make install_jsregexp" },
     { "petertriho/cmp-git" },
   },
   event = { "InsertEnter", "CmdlineEnter" },
@@ -81,13 +81,22 @@ local M = {
     })
 
     local silent = { silent = true }
+    -- expand current selected snippet
     vim.keymap.set({ "i", "s" }, "<C-k>", function()
       luasnip.expand_or_jump()
     end, silent)
+    -- jump backwards in snippet selection
     vim.keymap.set({ "i", "s" }, "<C-j>", function()
       luasnip.jump(-1)
     end, silent)
+    -- jump forward in snippet selection
     vim.keymap.set({ "i", "s" }, "<C-l>", function()
+      if luasnip.choice_active() then
+        luasnip.change_choice(1)
+      end
+    end, silent)
+    -- change active choice node in snippet
+    vim.keymap.set({ "i", "s" }, "<C-E>", function ()
       if luasnip.choice_active() then
         luasnip.change_choice(1)
       end
