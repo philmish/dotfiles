@@ -26,3 +26,16 @@ api.nvim_create_autocmd(
   }
 )
 
+-- remove trailing whitespaces before file write for all filetypes
+api.nvim_create_autocmd(
+  {"BufWritePre"},
+  {
+    group = pre_write_fmt_group,
+    pattern = {"*"},
+    callback = function ()
+      local save_cursor = vim.fn.winsaveview()
+      vim.cmd([[%s/\s\+$//e]])
+      vim.fn.winrestview(save_cursor)
+    end
+  }
+)
