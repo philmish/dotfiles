@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.8",
+  tag = "v0.1.9",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter" },
@@ -16,12 +16,12 @@ return {
       { "<leader>fg", builtin.git_commits, silent = true },
       { "<leader>fd", builtin.diagnostics, silent = true },
       { "<leader>fh", builtin.help_tags, silent = true },
+      { "<leader>fb", builtin.buffers, silent = true },
     }
   end,
   config = function()
     local actions = require("telescope.actions")
     local actions_layout = require("telescope.actions.layout")
-    --local builtin = require("telescope.builtin")
 
     require("telescope").setup({
       defaults = {
