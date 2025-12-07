@@ -12,7 +12,8 @@ return {
         ["https://raw.githubusercontent.com/compose-spec/compose-go/master/schema/compose-spec.json"] = "**/docker-compose*.y*ml",
         ["https://gitlab.com/gitlab-org/gitlab-foss/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "**/*.gitlab-ci.y*ml",
         ["https://www.schemastore.org/github-action.json"] = ".github/actions/*.{yml,yaml}",
-        ["https://www.schemastore.org/github-workflow.json"] = ".github/workflows/*.{yml,yaml}"
+        ["https://www.schemastore.org/github-workflow.json"] = ".github/workflows/*.{yml,yaml}",
+        ["https://taskfile.dev/schema.json"] = "**/Taskfile.{yml,yaml}",
       }
     },
   },
