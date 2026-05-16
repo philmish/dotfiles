@@ -3,10 +3,10 @@ alias bashrc="nvim ~/.bashrc"
 
 alias dc="docker compose"
 
-alias ..="cd .."
-alias ls="lsd"
-alias ll="lsd -l"
-alias la="lsd -la"
+alias ..="z .."
+alias ls="exa"
+alias ll="exa -l --icons"
+alias la="exa -la --icons"
 
 alias tmxc="bash ~/scripts/tmxc.sh"
 alias tmxg="bash ~/scripts/tmxg.sh"
