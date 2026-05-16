@@ -16,7 +16,7 @@ hl.monitor({
 local terminal        = "alacritty"
 local rofi_launcher   = "rofi --show drun"
 --local rofi_launcher = "~/.config/rofi/launchers/type-7/launcher.sh"
-local fileManager     = "dolphin"
+local file_manager    = "dolphin"
 local waybar_launcher = "~/.launchers/waybar_launcher.sh"
 
 ------------------
@@ -96,6 +96,12 @@ hl.window_rule({
   no_focus = true
 })
 
+hl.window_rule({
+  name      = "obsidian-on-ws-3",
+  match     = { class = "obsidian" },
+  workspace = "3 silent",
+})
+
 -------------------
 --- Keybindings ---
 -------------------
@@ -117,7 +123,7 @@ end
 
 hl.bind(main_mod_and{"SHIFT", "Q"}, hl.dsp.window.close())
 hl.bind(main_mod_and{"RETURN"}, hl.dsp.exec_cmd(terminal))
-hl.bind(main_mod_and{"E"}, hl.dsp.exec_cmd(fileManager))
+hl.bind(main_mod_and{"E"}, hl.dsp.exec_cmd(file_manager))
 hl.bind(main_mod_and{"R"}, hl.dsp.exec_cmd(rofi_launcher))
 hl.bind(main_mod_and{"F"}, hl.dsp.window.float({ action = "toggle" }))
 hl.bind(main_mod_and{"V"}, hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
