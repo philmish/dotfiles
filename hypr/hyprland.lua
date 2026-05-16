@@ -181,7 +181,7 @@ hl.config({
     resize_on_border = false,
     allow_tearing    = false,
 
-    layout           = "dwindel",
+    layout           = "dwindle",
   },
 
   dwindle = { preserve_split = true },
