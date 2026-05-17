@@ -16,3 +16,8 @@ export PAGER="bat -p"
 if [[ -f source /usr/share/bash-completion/completions/git ]]; then
     source /usr/share/bash-completion/completions/git
 fi
+
+# home manager
+if [[ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]]; then
+    . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+fi
