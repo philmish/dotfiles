@@ -12,6 +12,7 @@
     ./modules/git.nix
     ./modules/bash.nix
     ./modules/tools.nix
+    ./modules/langs.nix
     ./modules/misc.nix
   ];
 
