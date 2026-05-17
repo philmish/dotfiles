@@ -3,11 +3,18 @@
     packages = with pkgs; [
       dust
       difftastic
+      ripgrep
+      yq-go
+      jq
     ];
+  };
+  programs.fzf  = {
+    enable                = true;
+    enableBashIntegration = true;
   };
   programs.eza = {
     enable                = true;
-    icons                 = "auto";
+    icons                 = "always";
     enableBashIntegration = true;
   };
   programs.lazygit = {
