@@ -4,6 +4,7 @@
       dust
       difftastic
       ripgrep
+      hyperfine
       yq-go
       jq
     ];
