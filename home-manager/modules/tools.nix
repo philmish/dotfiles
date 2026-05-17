@@ -7,6 +7,9 @@
       hyperfine
       yq-go
       jq
+      hurl
+      uv
+      bat
     ];
   };
   programs.zoxide = {
@@ -17,11 +20,11 @@
     enable                = true;
     enableBashIntegration = true;
   };
-  programs.fzf  = {
+  programs.fzf    = {
     enable                = true;
     enableBashIntegration = true;
   };
-  programs.eza = {
+  programs.eza    = {
     enable                = true;
     icons                 = "always";
     enableBashIntegration = true;
