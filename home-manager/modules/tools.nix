@@ -8,6 +8,14 @@
       jq
     ];
   };
+  programs.zoxide = {
+    enable                = true;
+    enableBashIntegration = true;
+  };
+  programs.mise   = {
+    enable                = true;
+    enableBashIntegration = true;
+  };
   programs.fzf  = {
     enable                = true;
     enableBashIntegration = true;
