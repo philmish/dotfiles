@@ -9,6 +9,7 @@
       ls    = "eza";
       ll    = "eza -l";
       la    = "eza -la";
+      tree  = "eza -l --tree";
     };
   };
   home.packages = [
